@@ -1,0 +1,23 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="create-table-claims" author="Yuriy Gorelov">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="claims"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="claims" remarks="Заявки">
+            <column name="id" type="UUID" remarks="Идентификатор заявки">
+                <constraints primaryKey="true" primaryKeyName="pk_claim"/>
+            </column>
+            <column name="profile_id" type="UUID" remarks="Идентификатор профиля">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
