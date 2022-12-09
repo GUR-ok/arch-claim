@@ -22,6 +22,16 @@
             <column name="state" type="varchar(20)" remarks="Статус заявки">
                 <constraints nullable="false"/>
             </column>
+            <column name="agreement_number" type="BIGINT" remarks="Номер договора">
+            </column>
+            <column name="brokerage_account_id" type="UUID" remarks="Идентификатор брокерского счета">
+            </column>
+            <column name="first_name" type="varchar(255)" remarks="Имя клиента">
+            </column>
+            <column name="updated" type="DATETIME(3)" remarks="Дата обновления заявки"
+                    defaultValueDate="NOW()">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 

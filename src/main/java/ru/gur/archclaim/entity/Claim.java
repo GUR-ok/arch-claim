@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.Column;
@@ -16,6 +17,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Audited
@@ -40,9 +42,22 @@ public class Claim {
     @Column(name = "process_id")
     private String processId;
 
-    @Column(columnDefinition = "state")
+    @Column(name = "state")
     @Enumerated(EnumType.STRING)
     private State state;
+
+    @Column(name = "agreement_number")
+    Long agreementNumber;
+
+    @Column(columnDefinition = "uuid", name = "brokerage_account_id")
+    UUID brokerageAccountId;
+
+    @Column(name = "first_name")
+    String firstName;
+
+    @UpdateTimestamp
+    @Column(name = "updated", nullable = false)
+    LocalDateTime updated;
 
     @PrePersist
     public void prePersist() {

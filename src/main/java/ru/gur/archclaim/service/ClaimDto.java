@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Value;
 import ru.gur.archclaim.entity.State;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Value
@@ -17,4 +18,12 @@ public class ClaimDto {
     String processId;
 
     State state;
+
+    LocalDateTime updated;
+
+    Long agreementNumber;
+
+    UUID brokerageAccountId;
+
+    String firstName;
 }

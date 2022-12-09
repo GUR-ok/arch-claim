@@ -1,4 +1,4 @@
-package ru.gur.archclaim.service;
+package ru.gur.archclaim.service.immutable;
 
 import lombok.Builder;
 import lombok.Value;

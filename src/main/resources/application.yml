@@ -55,3 +55,7 @@ logging:
     root: INFO
     org.springframework: INFO
     ru.gur.arch: INFO
+
+kafka:
+  bootstrapAddress: kafka:9094
+  groupId: group2

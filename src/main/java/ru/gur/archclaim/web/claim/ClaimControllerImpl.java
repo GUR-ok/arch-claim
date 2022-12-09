@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.gur.archclaim.service.ClaimDto;
 import ru.gur.archclaim.service.ClaimService;
-import ru.gur.archclaim.service.ImmutableCreateClaimRequest;
+import ru.gur.archclaim.service.immutable.ImmutableCreateClaimRequest;
 import ru.gur.archclaim.web.claim.request.CreateClaimRequest;
 import ru.gur.archclaim.web.claim.response.FindClaimsResponse;
 

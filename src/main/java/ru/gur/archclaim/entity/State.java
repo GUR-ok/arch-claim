@@ -12,7 +12,7 @@ public enum State {
     DONE;
 
     public static Set<State> getProcessingStates() {
-        return Set.of(NEW, IN_PROGRESS);
+        return Set.of(IN_PROGRESS, WAITING_FOR_SIGN);
     }
 
     public static Set<State> getCompleted() {

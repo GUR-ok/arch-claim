@@ -7,6 +7,7 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="06-12-2022--01-create-table-claim.xml" relativeToChangelogFile="true"/>
-    <include file="06-12-2022--02-create-table-claim-audited.xml" relativeToChangelogFile="true"/>
-    <include file="06-12-2022--03-create-table-revinfo.xml" relativeToChangelogFile="true"/>
+    <include file="06-12-2022--02-create-hibernate_sequence.xml" relativeToChangelogFile="true"/>
+    <include file="06-12-2022--03-create-table-claim-audited.xml" relativeToChangelogFile="true"/>
+    <include file="06-12-2022--04-create-table-revinfo.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
