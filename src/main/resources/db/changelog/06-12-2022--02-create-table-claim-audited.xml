@@ -23,6 +23,10 @@
             </column>
             <column name="profile_id" type="UUID" remarks="Идентификатор профиля">
             </column>
+            <column name="process_id" type="varchar(100)" remarks="Идентификатор процесса">
+            </column>
+            <column name="state" type="varchar(20)" remarks="Статус заявки">
+            </column>
         </createTable>
     </changeSet>
 

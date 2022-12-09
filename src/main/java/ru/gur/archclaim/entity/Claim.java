@@ -10,8 +10,11 @@ import org.hibernate.envers.Audited;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import java.util.UUID;
 
@@ -33,4 +36,16 @@ public class Claim {
 
     @Column(columnDefinition = "uuid", name = "profile_id", updatable = false, nullable = false)
     private UUID profileId;
+
+    @Column(name = "process_id")
+    private String processId;
+
+    @Column(columnDefinition = "state")
+    @Enumerated(EnumType.STRING)
+    private State state;
+
+    @PrePersist
+    public void prePersist() {
+        setState(State.NEW);
+    }
 }
