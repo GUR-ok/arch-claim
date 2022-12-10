@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="06-12-2022--01-create-table-claim.xml" relativeToChangelogFile="true"/>
+    <include file="06-12-2022--02-create-hibernate_sequence.xml" relativeToChangelogFile="true"/>
+    <include file="06-12-2022--03-create-table-claim-audited.xml" relativeToChangelogFile="true"/>
+    <include file="06-12-2022--04-create-table-revinfo.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

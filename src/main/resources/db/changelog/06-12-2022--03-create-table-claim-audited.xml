@@ -1,0 +1,41 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="create-table-claims-audited" author="Yuriy Gorelov">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="claims_audited"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="claims_audited" remarks="Заявки">
+            <column name="rev" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="tinyint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="id" type="UUID" remarks="Идентификатор заявки">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profile_id" type="UUID" remarks="Идентификатор профиля">
+            </column>
+            <column name="process_id" type="varchar(100)" remarks="Идентификатор процесса">
+            </column>
+            <column name="state" type="varchar(20)" remarks="Статус заявки">
+            </column>
+            <column name="agreement_number" type="BIGINT" remarks="Номер договора">
+            </column>
+            <column name="brokerage_account_id" type="UUID" remarks="Идентификатор брокерского счета">
+            </column>
+            <column name="first_name" type="varchar(255)" remarks="Имя клиента">
+            </column>
+            <column name="updated" type="DATETIME(3)" remarks="Дата обновления заявки">
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

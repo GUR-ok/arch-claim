@@ -1,18 +1,45 @@
 server:
   servlet:
     context-path: /
-  # http://localhost:8080/swagger-ui.html
-  port: 8080
+  # http://localhost:8281/swagger-ui.html
+  port: 8281
 
 management:
   server:
-    port: 8003
+    port: 8204
   endpoints:
     web:
       base-path: /
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: public
+  datasource:
+    platform: postgres
+    url: jdbc:h2:mem:memdb
+    username: sa
+    password: p
+    driverClassName: org.h2.Driver
+  liquibase:
+    change-log: classpath:/db/changelog/db_master_changelog.xml
+    enabled: true
+  h2:
+    console:
+      # http://localhost:8281/h2-console
+      enabled: true
 
 logging:
   level:
     root: INFO
     org.springframework: INFO
     ru.gur.arch: DEBUG
+
+kafka:
+  bootstrapAddress: localhost:9091
+  groupId: group2
