@@ -22,6 +22,12 @@ bootJar {
     archiveFileName = "app.jar"
 }
 
+dependencyManagement {
+    imports {
+        mavenBom("org.testcontainers:testcontainers-bom:1.17.3")
+    }
+}
+
 dependencies {
     implementation(
             'org.springdoc:springdoc-openapi-ui:1.6.4',
@@ -40,7 +46,11 @@ dependencies {
     runtimeOnly('com.h2database:h2', 'io.micrometer:micrometer-registry-prometheus')
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation('org.springframework.boot:spring-boot-starter-test',
+            'org.testcontainers:testcontainers',
+            'org.testcontainers:junit-jupiter',
+            'org.testcontainers:postgresql',
+            'org.springframework.kafka:spring-kafka-test')
 }
 
 tasks.named('test') {
