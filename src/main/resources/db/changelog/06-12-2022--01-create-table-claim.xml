@@ -14,7 +14,7 @@
             <column name="id" type="UUID" remarks="Идентификатор заявки">
                 <constraints primaryKey="true" primaryKeyName="pk_claim"/>
             </column>
-            <column name="profile_id" type="UUID" remarks="Идентификатор профиля">
+            <column name="profile_id" type="UUID" remarks="Идентификатор заявки">
                 <constraints nullable="false"/>
             </column>
             <column name="process_id" type="varchar(100)" remarks="Идентификатор процесса">

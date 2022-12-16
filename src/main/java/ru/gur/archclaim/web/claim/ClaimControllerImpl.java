@@ -1,5 +1,6 @@
 package ru.gur.archclaim.web.claim;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ public class ClaimControllerImpl implements ClaimController {
 
     @Override
     @GetMapping(path = "/claims/{profileId}")
+    @Operation(summary = "Найти заявки по профилю пользователя")
     public FindClaimsResponse findClaims(@PathVariable final UUID profileId,
                                          @RequestParam final String states) {
         return FindClaimsResponse.builder()
@@ -34,6 +36,7 @@ public class ClaimControllerImpl implements ClaimController {
 
     @Override
     @PostMapping(path = "/claims")
+    @Operation(summary = "Создать новую заявку")
     public UUID createClaim(@Valid @NotNull @RequestBody final CreateClaimRequest createClaimRequest) {
         return claimService.createClaim(ImmutableCreateClaimRequest.builder()
                 .processId(createClaimRequest.getProcessId())
@@ -43,6 +46,7 @@ public class ClaimControllerImpl implements ClaimController {
 
     @Override
     @GetMapping(path = "/claim/{claimId}")
+    @Operation(summary = "Получить данные заявки")
     public ClaimDto findClaim(@PathVariable final UUID claimId) {
         return claimService.findClaim(claimId);
     }
