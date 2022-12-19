@@ -6,7 +6,7 @@
 
 ---
 
-Для локального поднятия кафки: `docker-compose-kafka up`
+Для локального поднятия кафки: `docker-compose .\docker-compose-kafka.yml up`
 
 Пример сообщения в Кафку:
 
